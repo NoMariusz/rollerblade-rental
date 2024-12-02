@@ -3,8 +3,8 @@ INSERT INTO roles (name) VALUES
 ('moderator'),
 ('user');
 
-INSERT INTO users (username, password) VALUES
-('john_doe', 'password123');
+INSERT INTO users (username, password, role_id) VALUES
+('john_doe', 'password123', (SELECT id FROM roles WHERE name = 'user'));
 
 INSERT INTO user_profiles (id, user_id, first_name, last_name, email, phone_number) VALUES
 (1, (SELECT id FROM users WHERE username = 'john_doe'), 'John', 'Doe', 'john.doe@example.com', '123-456-789');
@@ -50,9 +50,10 @@ INSERT INTO sizes (name) VALUES
 
 INSERT INTO rollerblades (model_version_id, size_id, hourly_rate, quantity) VALUES 
 (1, 1, 50.00, 5), -- Red Powerslide Next 110 (Size 42)
-(2, 2, 20.00, 5), -- Pink Powerslide Imperial 80 (Size 39)
-(3, 3, 30.00, 5), -- Green Rollerblade Lightning 80 (Size 44)
-(4, 1, 60.00, 5); -- White Rollerblade Lightning 110 (Size 42)
+(2, 2, 20.00, 1), -- Pink Powerslide Imperial 80 (Size 39)
+(3, 3, 30.00, 1), -- Green Rollerblade Lightning 80 (Size 44)
+(4, 1, 60.00, 2), -- White Rollerblade Lightning 110 (Size 42)
+(1, 3, 40.00, 2); -- Red Powerslide Next 110 (Size 44)
 
 INSERT INTO rental_statuses (name) VALUES 
 ('submitted'),
@@ -65,8 +66,8 @@ INSERT INTO rental_statuses (name) VALUES
 
 INSERT INTO rentals (user_id, rollerblade_id, start_date, end_date, status_id, notes) VALUES
 (1, 1, '2024-11-10 00:00:00', '2024-11-30 23:59:59', (SELECT id FROM rental_statuses WHERE name = 'completed'), 'No issues, returned on time'),
-(1, 2, '2024-12-01 00:00:00', '2024-02-01 23:59:59', (SELECT id FROM rental_statuses WHERE name = 'in progress'), 'Currently in use'),
-(1, 3, '2024-01-01 00:00:00', '2026-01-01 23:59:59', (SELECT id FROM rental_statuses WHERE name = 'canceled'), 'Canceled due to personal reasons');
+(1, 3, '2024-12-01 00:00:00', '2025-02-01 23:59:59', (SELECT id FROM rental_statuses WHERE name = 'in progress'), 'Currently in use'),
+(1, 2, '2024-01-01 00:00:00', '2026-01-01 23:59:59', (SELECT id FROM rental_statuses WHERE name = 'canceled'), 'Canceled due to personal reasons');
 
 INSERT INTO homepage_ratings (title, icon, user_name, website_name) VALUES
 ('Great', 'https://similarpng.com/illustration-of-google-icon-on-transparent-background-png/', 'Jimmy', 'google.com'),
