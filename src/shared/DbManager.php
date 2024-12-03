@@ -1,4 +1,10 @@
 <?php
+
+$GLOBALS['host'] = $host;
+$GLOBALS['db'] = $db;
+$GLOBALS['user'] = $user;
+$GLOBALS['passwd'] = $passwd;
+
 class DbManager
 {
     static function make_query($query)
@@ -102,8 +108,7 @@ class DbManager
 
     private static function make_connection()
     {
-        global $host, $user, $passwd, $db;
-        $conn = new PDO("pgsql:host=$host;dbname=$db", $user, $passwd);
+        $conn = new PDO("pgsql:host=" . $GLOBALS['host'] . ";dbname=" . $GLOBALS['db'], $GLOBALS['user'], $GLOBALS['passwd']);
         return $conn;
     }
 }

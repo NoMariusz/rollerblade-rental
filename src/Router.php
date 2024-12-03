@@ -4,6 +4,7 @@ $get_routes = [
     '/' => './views/home.php',
     '/home' => './views/home.php',
     '/login' => './views/login.php',
+    '/ratings' => './views/getHomepageRatings.php',
 ];
 
 $post_routes = [];
