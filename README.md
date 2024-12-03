@@ -7,8 +7,10 @@ project for studies of application to reserve rollerblades for rental
 first make environment for app, you can do this simply by using docker, start your docker desktop and type in your command line
 
 ```
-docker-compose up
+docker-compose up --build
 ```
+
+> Used --build to install dependencies for connecting to database
 
 after few seconds app will start
 now it is time to prepare database, simple way is to open **localhost:8888** in your browser, login by using credentials from _docker-compose.yml_
