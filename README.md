@@ -30,6 +30,7 @@ $db = 'rollerblade-rental';
 now copy content from _rollerblade-rental_structure.sql_ and run this as query to create structure
 
 > ⚠️ Remrember to run all sql statemenets not only one
-> if you want use also _rollerblade-rental_example_data.sql_ to have some examples in your databaseal ready to work with
+
+if you want use also _rollerblade-rental_example_data.sql_ to have some examples in your databaseal ready to work with
 
 Now everything is ready you can open app in your brower on **localhost:8080**!
