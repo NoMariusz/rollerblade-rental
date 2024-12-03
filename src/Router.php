@@ -1,8 +1,8 @@
 <?php
 
 $get_routes = [
-    '/' => './views/home.php',
-    '/home' => './views/home.php',
+    '/' => './views/home/index.html',
+    '/home' => './views/home/index.html',
     '/login' => './views/login.php',
     '/ratings' => './views/getHomepageRatings.php',
 ];
