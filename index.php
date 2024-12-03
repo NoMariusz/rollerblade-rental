@@ -1,3 +1,4 @@
 <?php
+include_once './backend/Router.php';
 
-echo 'Hi there 👋';
+Router::handle($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);

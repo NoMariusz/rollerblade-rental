@@ -21,6 +21,12 @@ now it is time to prepare database, simple way is to open **localhost:8888** in 
       PGADMIN_DEFAULT_PASSWORD: password
 ```
 
+create database and name it like in _backend/credentials.php_
+
+```
+$db = 'rollerblade-rental';
+```
+
 now copy content from _rollerblade-rental_structure.sql_ and run this as query to create structure
 
 > ⚠️ Remrember to run all sql statemenets not only one
