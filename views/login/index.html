@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login</title>
+		<link rel="stylesheet" href="/views/login/styles.css" />
+	</head>
+	<body>
+		<header>
+			<img src="/assets/rr_logo.png" alt="RR Logo" class="logo" />
+		</header>
+		<main>
+			<div class="login-container">
+				<div class="login-texts">
+					<h1>Rollerblade Rental</h1>
+					<h2>Please Log In</h2>
+				</div>
+				<form id="login-form">
+					<label for="username">Login</label>
+					<input
+						type="text"
+						id="username"
+						name="username"
+						placeholder="Value"
+						required
+					/>
+					<label for="password">Password</label>
+					<input
+						type="password"
+						id="password"
+						name="password"
+						placeholder="Value"
+						required
+					/>
+					<button type="submit" class="sign-in">Sign In</button>
+					<button type="button" class="register">Or Register</button>
+					<a href="/contact" class="forgot-password"
+						>Forgot password?</a
+					>
+					<p id="error-message" class="error"></p>
+				</form>
+			</div>
+		</main>
+	</body>
+	<script src="/views/login/main.js"></script>
+</html>

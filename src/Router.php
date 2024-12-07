@@ -4,7 +4,7 @@ $get_routes = [
     '/' => './views/home/index.html',
     '/home' => './views/home/index.html',
     '/contact' => './views/contact/index.html',
-    '/login' => './views/login.php',
+    '/login' => './views/login/index.html',
     '/ratings' => './views/getHomepageRatings.php',
 ];
 
