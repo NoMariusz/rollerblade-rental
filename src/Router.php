@@ -8,7 +8,9 @@ $get_routes = [
     '/ratings' => './views/getHomepageRatings.php',
 ];
 
-$post_routes = [];
+$post_routes = [
+    '/login' => './src/controllers/LoginController.php',
+];
 
 class Router
 {
