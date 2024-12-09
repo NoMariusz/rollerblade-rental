@@ -50,7 +50,7 @@ class LoginController extends BaseController
 
         return $this->dbManager->make_safe_query(
             $query,
-            ['key' => ':username', 'type' => PDO::PARAM_STR, 'value' => $username]
+            [['key' => ':username', 'type' => PDO::PARAM_STR, 'value' => $username]]
         );
     }
 }

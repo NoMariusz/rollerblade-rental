@@ -9,7 +9,7 @@ $get_routes = [
 ];
 
 $post_routes = [
-    '/login' => './src/controllers/LoginController.php',
+    '/login' => './controllers/LoginController.php',
 ];
 
 class Router
