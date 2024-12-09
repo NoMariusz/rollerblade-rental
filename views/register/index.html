@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Register</title>
+		<link rel="stylesheet" href="/views/register/styles.css" />
+		<link rel="stylesheet" href="/views/shared/index.css" />
+	</head>
+	<body>
+		<header>
+			<img src="/assets/rr_logo.png" alt="RR Logo" class="logo" />
+		</header>
+		<main>
+			<div class="login-container">
+				<div class="login-texts">
+					<h1>Rollerblade Rental</h1>
+					<h2>Register yourself</h2>
+				</div>
+				<form id="login-form">
+					<label for="first-name">First name</label>
+					<input
+						type="text"
+						id="first-name"
+						name="first-name"
+						placeholder="Value"
+						required
+					/>
+
+					<label for="family-name">Family name</label>
+					<input
+						type="text"
+						id="family-name"
+						name="family-name"
+						placeholder="Value"
+						required
+					/>
+
+					<label for="email">Email</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						placeholder="Value"
+						required
+					/>
+
+					<label for="username">Login</label>
+					<input
+						type="text"
+						id="username"
+						name="username"
+						placeholder="Value"
+						required
+					/>
+
+					<label for="password">Password</label>
+					<input
+						type="password"
+						id="password"
+						name="password"
+						placeholder="Value"
+						required
+					/>
+
+					<label for="confirm-password">Confirm password</label>
+					<input
+						type="password"
+						id="confirm-password"
+						name="confirm-password"
+						placeholder="Value"
+						required
+					/>
+					<button type="submit" class="btn btn-primary">
+						Register
+					</button>
+					<a href="/register" class="btn btn-secondary">
+						Or Log in
+					</a>
+					<p id="error-message" class="error"></p>
+				</form>
+			</div>
+		</main>
+	</body>
+	<script src="/views/register/main.js"></script>
+</html>

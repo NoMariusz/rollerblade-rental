@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Login</title>
 		<link rel="stylesheet" href="/views/login/styles.css" />
+		<link rel="stylesheet" href="/views/shared/index.css" />
 	</head>
 	<body>
 		<header>
@@ -33,8 +34,12 @@
 						placeholder="Value"
 						required
 					/>
-					<button type="submit" class="sign-in">Sign In</button>
-					<button type="button" class="register">Or Register</button>
+					<button type="submit" class="sign-in btn btn-primary">
+						Sign In
+					</button>
+					<a href="/register" class="register btn btn-secondary">
+						Or Register
+					</a>
 					<a href="/contact" class="forgot-password"
 						>Forgot password?</a
 					>
