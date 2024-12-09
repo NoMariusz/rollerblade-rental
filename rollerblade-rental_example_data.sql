@@ -70,6 +70,6 @@ INSERT INTO rentals (user_id, rollerblade_id, start_date, end_date, status_id, n
 (1, 2, '2024-01-01 00:00:00', '2026-01-01 23:59:59', (SELECT id FROM rental_statuses WHERE name = 'canceled'), 'Canceled due to personal reasons');
 
 INSERT INTO homepage_ratings (title, icon, user_name, website_name) VALUES
-('Great', 'https://similarpng.com/illustration-of-google-icon-on-transparent-background-png/', 'Jimmy', 'google.com'),
-('Awesome', 'https://info.ceneo.pl/ceneo-pl-odswieza-logo-oraz-layout-komputerowej-wersji-serwisu', 'Andrzej', 'ceneo.pl'),
-('So special', 'https://similarpng.com/illustration-of-google-icon-on-transparent-background-png/', 'Dan', 'google.com');
+('Great', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png', 'Jimmy', 'google.com'),
+('Awesome', 'https://image.ceneostatic.pl/data/article_picture/66/f4/78ac-02bd-42c0-a8ee-a0a65197e76f_large.png', 'Andrzej', 'ceneo.pl'),
+('So special', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png', 'Dan', 'google.com');

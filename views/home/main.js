@@ -22,10 +22,14 @@ function displayRatings(ratings) {
 		card.className = 'review-card';
 
 		card.innerHTML = `
-            <img src="${rating.icon}" alt="${rating.website_name}" />
-            <p><strong>${rating.title}</strong></p>
-            <p>${rating.user_name}</p>
-            <p>${rating.website_name}</p>
+			<p><strong>"${rating.title}"</strong></p>
+			<div class="review-card-bottom">
+				<img src="${rating.icon}" alt="${rating.website_name}" />
+				<div class="review-card-texts">
+					<p>${rating.user_name}</p>
+					<p>${rating.website_name}</p>
+				</div>
+			</div>
         `;
 
 		container.appendChild(card);
@@ -34,3 +38,12 @@ function displayRatings(ratings) {
 
 // Call fetchRatings when the page loads
 fetchRatings();
+
+document.addEventListener('DOMContentLoaded', () => {
+	const hamburger = document.querySelector('.hamburger');
+	const nav = document.querySelector('nav');
+
+	hamburger.addEventListener('click', () => {
+		nav.classList.toggle('show');
+	});
+});
