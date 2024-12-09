@@ -62,7 +62,7 @@ class DbManager
      * @param mixed $bindParams array of assoc arrays with elemenst 'key': String, 'type': PDO:PARAM and 'value': any
      * @return array|bool
      */
-    function make_safe_query($query, $bindParams)
+    function make_safe_no_result_query($query, $bindParams)
     {
         $res = self::perform_safe_query($query, $bindParams);
         if (!$res) {
@@ -72,7 +72,7 @@ class DbManager
         return $res ? true : false;
     }
 
-    function make_safe_no_result_query($query, $bindParams)
+    function make_safe_query($query, $bindParams)
     {
         $res = self::perform_safe_query($query, $bindParams);
         if (!$res) {

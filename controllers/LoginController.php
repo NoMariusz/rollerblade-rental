@@ -42,10 +42,12 @@ class LoginController extends BaseController
     {
         $query = 'SELECT id, username, password FROM users WHERE username = :username';
 
-        return $this->dbManager->make_safe_query(
+        $res = $this->dbManager->make_safe_query(
             $query,
             [['key' => ':username', 'type' => PDO::PARAM_STR, 'value' => $username]]
         );
+
+        return $res ? $res[0] : false;
     }
 }
 
