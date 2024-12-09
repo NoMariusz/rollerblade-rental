@@ -1,7 +1,7 @@
-const loginForm = document.getElementById('login-form');
+const form = document.getElementById('register-form');
 const errorMessage = document.getElementById('error-message');
 
-loginForm.addEventListener('submit', async (event) => {
+form.addEventListener('submit', async (event) => {
 	event.preventDefault();
 
 	const password = document.getElementById('password').value;

@@ -1,2 +1,7 @@
 <?php
-// for example statuses enum or something like that
+
+const DEBUG = true;
+
+const ADMIN_ROLE_ID = 1;
+const MODERATOR_ROLE_ID = 2;
+const USER_ROLE_ID = 3;

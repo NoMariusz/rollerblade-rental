@@ -16,7 +16,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE user_profiles (
-    id INT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     user_id INT UNIQUE NOT NULL REFERENCES users(id),
     first_name VARCHAR(50),
     last_name VARCHAR(50),

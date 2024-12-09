@@ -11,6 +11,7 @@ $get_routes = [
 
 $post_routes = [
     '/login' => './controllers/LoginController.php',
+    '/register' => './controllers/RegisterController.php',
 ];
 
 class Router

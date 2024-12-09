@@ -4,12 +4,6 @@ include_once './src/includes.php';
 
 class LoginController extends BaseController
 {
-
-    public function __construct()
-    {
-        $this->dbManager = new DbManager(); // Initialize the database manager
-    }
-
     public function handleRequest()
     {
         $input = json_decode(file_get_contents('php://input'), true);
