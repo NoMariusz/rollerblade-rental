@@ -7,6 +7,7 @@ $get_routes = [
     '/login' => './views/login/index.html',
     '/register' => './views/register/index.html',
     '/ratings' => './views/getHomepageRatings.php',
+    '/logout' => './views/logout.php',
 ];
 
 $post_routes = [
