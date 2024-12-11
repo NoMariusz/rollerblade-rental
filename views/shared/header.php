@@ -1,6 +1,8 @@
 <header>
     <div class="logo">
-        <img src="/views/shared/rr_logo.png" alt="Rollerblade-Rental" />
+        <a href="/">
+            <img src="/views/shared/rr_logo.png" alt="Rollerblade-Rental" />
+        </a>
     </div>
     <div class="hamburger-wrapper">
         <button class="hamburger" aria-label="Toggle navigation">
