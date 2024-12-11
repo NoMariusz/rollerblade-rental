@@ -23,10 +23,11 @@ class LoginController extends BaseController
     {
         try {
             // Fetch user data by username
-            $user = $this->getUserByUsername($username);
+            $user = $this->getUserDataByUsername($username);
 
             if ($user && password_verify($password, $user['password'])) {
                 // Password matches, login successful
+                AuthUtils::authorizeUser($user['username'], $user['role']);
                 $this->sendResponse(['message' => 'Login successful']);
             } else {
                 // Invalid credentials
@@ -38,9 +39,9 @@ class LoginController extends BaseController
         }
     }
 
-    private function getUserByUsername($username)
+    private function getUserDataByUsername($username)
     {
-        $query = 'SELECT id, username, password FROM users WHERE username = :username';
+        $query = 'SELECT u.id, username, password, r.name as role FROM users u inner join roles r on role_id = r.id WHERE username = :username';
 
         $res = $this->dbManager->make_safe_query(
             $query,
