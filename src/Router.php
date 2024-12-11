@@ -1,9 +1,9 @@
 <?php
 
 $get_routes = [
-    '/' => './views/home/index.html',
-    '/home' => './views/home/index.html',
-    '/contact' => './views/contact/index.html',
+    '/' => './views/home/index.php',
+    '/home' => './views/home/index.php',
+    '/contact' => './views/contact/index.php',
     '/login' => './views/login/index.html',
     '/register' => './views/register/index.html',
     '/ratings' => './views/getHomepageRatings.php',

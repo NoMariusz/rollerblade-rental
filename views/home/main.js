@@ -38,12 +38,3 @@ function displayRatings(ratings) {
 
 // Call fetchRatings when the page loads
 fetchRatings();
-
-document.addEventListener('DOMContentLoaded', () => {
-	const hamburger = document.querySelector('.hamburger');
-	const nav = document.querySelector('nav');
-
-	hamburger.addEventListener('click', () => {
-		nav.classList.toggle('show');
-	});
-});
