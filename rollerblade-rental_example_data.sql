@@ -32,7 +32,8 @@ INSERT INTO model_versions (model_id, color_id, wheel_size_id, purchase_link) VA
 (1, 1, 1, 'https://bladeville.pl/powerslide-next-110-czarno-czerwone.html'), -- Red Powerslide Next 110
 (2, 2, 2, 'https://bladeville.pl/powerslide-imperial-80-lollipop.html'), -- Pink Powerslide Imperial 80
 (3, 3, 2, 'https://bladeville.pl/rolki-rollerblade-lightning/rollerblade-lightning-czarno-zolte.html'), -- Green Rollerblade Lightning 80
-(3, 4, 1, 'https://bladeville.pl/rolki-rollerblade-lightning/rollerblade-lightning-110-bialo-czarne.html'); -- White Rollerblade Lightning 110
+(3, 4, 1, 'https://bladeville.pl/rolki-rollerblade-lightning/rollerblade-lightning-110-bialo-czarne.html'), -- White Rollerblade Lightning 110
+(2, 4, 2, '"https://bladeville.pl/powerslide-imperial-white-le.html"'); -- White Powerslide Imperial 80
 
 INSERT INTO photos (model_version_id, url) VALUES 
 (1, 'https://cdn.bladeville.pl/media/catalog/product/cache/1/image/480x480/9df78eab33525d08d6e5fb8d27136e95/9/0/908374_next_black_red_110_2021_view01.jpg'),
@@ -41,6 +42,7 @@ INSERT INTO photos (model_version_id, url) VALUES
 (3, 'https://cdn.bladeville.pl/media/catalog/product/cache/1/image/480x480/9df78eab33525d08d6e5fb8d27136e95/0/7/073726001a1_lightning_photo-outside_side_view.jpg'),
 (4, 'https://cdn.bladeville.pl/media/catalog/product/cache/1/image/480x480/9df78eab33525d08d6e5fb8d27136e95/0/7/073720002v4_lightning_110_photo-outside_side_view.jpg'),
 (4, 'https://cdn.bladeville.pl/media/catalog/product/cache/1/image/480x480/9df78eab33525d08d6e5fb8d27136e95/0/7/073720002v4_lightning_110_photo-primary_angled_view-_1_.jpg');
+(5, 'https://cdn.bladeville.pl/media/catalog/product/cache/1/image/480x480/9df78eab33525d08d6e5fb8d27136e95/2/3/23540_5a4b8eafbda59IMG_9288_1.jpg');
 
 
 INSERT INTO sizes (name) VALUES 
@@ -53,7 +55,8 @@ INSERT INTO rollerblades (model_version_id, size_id, hourly_rate, quantity) VALU
 (2, 2, 20.00, 1), -- Pink Powerslide Imperial 80 (Size 39)
 (3, 3, 30.00, 1), -- Green Rollerblade Lightning 80 (Size 44)
 (4, 1, 60.00, 2), -- White Rollerblade Lightning 110 (Size 42)
-(1, 3, 40.00, 2); -- Red Powerslide Next 110 (Size 44)
+(1, 3, 40.00, 2), -- Red Powerslide Next 110 (Size 44)
+(5, 2, 30.00, 2); -- White Powerslide Imperial 80 (Size 39)
 
 INSERT INTO rental_statuses (name) VALUES 
 ('submitted'),
