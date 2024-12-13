@@ -6,4 +6,4 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-Router::handle($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
+Router::handle(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), $_SERVER['REQUEST_METHOD']);

@@ -115,6 +115,7 @@ SELECT
 	distinct on (p.model_version_id, s.id)
     rb.id AS rollerblade_id,
     CONCAT_WS(' ', b.name, m.name, ws.size::TEXT, c.name) AS rollerblade_name,
+    c.name as color,
     rb.quantity,
     rb.hourly_rate,
     p.url AS photo_url,
@@ -140,7 +141,7 @@ join
 -- function like parametrized view for finding free rollerblades in specific time range
 
 CREATE OR REPLACE FUNCTION all_available_rollerblades_between_dates(start_date TIMESTAMP, end_date TIMESTAMP)
-  returns table (rolerblade_id INT, rollerblade_name TEXT, quantity INT, hourly_rate DECIMAL(10, 2), photo_url TEXT, size TEXT)
+  returns table (rollerblade_id INT, rollerblade_name TEXT, color TEXT, quantity INT, hourly_rate DECIMAL(10, 2), photo_url TEXT, size TEXT)
   language sql as
 $func$
   select * from rollerblades_detailed r where quantity > (

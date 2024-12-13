@@ -21,7 +21,7 @@
 			</button>
 			<p>or</p>
 			<button class="btn btn-primary">
-				<a href="/rollerskates">Rent!</a>
+				<a href="/rollerblades">Rent!</a>
 			</button>
 		</div>
 	</section>
@@ -51,9 +51,9 @@
 		<div class="footer-texts">
 			<h2>Explore</h2>
 			<div class="footer-page-links">
-				<a href="#">Rent your roller blades</a>
-				<a href="#">Our roller blades</a>
-				<a href="#">Contact</a>
+				<a href="/rollerblades">Rent your roller blades</a>
+				<a href="/rollerblades">Our roller blades</a>
+				<a href="/contact">Contact</a>
 			</div>
 		</div>
 	</footer>

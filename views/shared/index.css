@@ -11,6 +11,7 @@
 	--primary-black: #2c2c2c;
 	--primary-white: #f5f5f5;
 	--border-neutral-color: #767676;
+	--border-light: #ccc;
 	--background-neutral-color: #e3e3e3;
 	--background-default: #fff;
 	--background-default-secondary: #f5f5f5;
@@ -134,4 +135,13 @@ nav {
 	background-color: var(--background-default-secondary);
 	border-radius: 0.5rem;
 	padding: 0.25rem 0.5rem;
+}
+
+/* card look */
+
+.card {
+	border: 1px solid var(--border-light);
+	padding: 1rem;
+	border-radius: 8px;
+	background: var(--background-default);
 }

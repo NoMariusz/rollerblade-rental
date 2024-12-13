@@ -54,11 +54,7 @@ body {
 	flex-wrap: wrap;
 }
 .review-card {
-	border: 1px solid #ddd;
-	padding: 1rem;
-	border-radius: 8px;
 	width: 200px;
-	background: white;
 }
 .review-card img {
 	max-width: 30px;

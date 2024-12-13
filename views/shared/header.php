@@ -9,7 +9,7 @@
             ☰
         </button>
         <nav>
-            <a href="/rollerskates" class="accent-link">Rent!</a>
+            <a href="/rollerblades" class="accent-link">Rent!</a>
             <a href="/contact">Contact</a>
 
             <?php

@@ -4,10 +4,11 @@ $get_routes = [
     '/' => './views/home/index.php',
     '/home' => './views/home/index.php',
     '/contact' => './views/contact/index.php',
+    '/rollerblades' => './views/rollerblades/index.php',
     '/login' => './views/login/index.html',
+    '/logout' => './views/logout.php',
     '/register' => './views/register/index.html',
     '/ratings' => './views/getHomepageRatings.php',
-    '/logout' => './views/logout.php',
 ];
 
 $post_routes = [

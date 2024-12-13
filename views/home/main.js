@@ -19,7 +19,7 @@ function displayRatings(ratings) {
 
 	ratings.forEach((rating) => {
 		const card = document.createElement('div');
-		card.className = 'review-card';
+		card.classList.add('review-card', 'card');
 
 		card.innerHTML = `
 			<p><strong>"${rating.title}"</strong></p>
