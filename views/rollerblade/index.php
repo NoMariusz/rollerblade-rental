@@ -25,7 +25,11 @@
 
     $db = new DbManager();
     $res = $db->make_safe_query(
-        "select * from rollerblades r inner join rollerblades_detailed on r.id = rollerblade_id inner join model_versions mv on mv.id = r.model_version_id WHERE r.id = :id",
+        "select * from rollerblades r 
+        inner join rollerblades_detailed on r.id = rollerblade_id 
+        inner join model_versions mv on mv.id = r.model_version_id 
+        inner join models m on mv.model_id = m.id 
+        WHERE r.id = :id",
         [['key' => ':id', 'value' => $rollerbladeId, 'type' => PDO::PARAM_INT]]
     );
 
@@ -56,7 +60,7 @@
 
 
     <div class="rollerblade-container">
-        <div class="rollerblade-image">
+        <div class="card main-image">
             <img src="<?= htmlspecialchars($rollerblade['photo_url']) ?>"
                 alt="<?= htmlspecialchars($rollerblade['rollerblade_name']) ?>" />
         </div>
@@ -65,10 +69,10 @@
             <h1><?= htmlspecialchars($rollerblade['rollerblade_name']) ?></h1>
 
             <span class="color-badge" style="background-color: <?= htmlspecialchars($rollerblade['color']) ?>;">
-                <?= htmlspecialchars($rollerblade['color']) ?>
+                <span><?= htmlspecialchars($rollerblade['color']) ?></span>
             </span>
 
-            <h2><?= htmlspecialchars($rollerblade['hourly_rate']) ?> PLN</h2>
+            <h2 class="price"><?= htmlspecialchars($rollerblade['hourly_rate']) ?> PLN</h2>
             <p class="price-label">rental price</p>
 
             <form action="/rent" method="post" class="rent-form">
@@ -118,16 +122,25 @@
                 <label for="endDate">Date end</label>
                 <input type="datetime-local" id="endDate" name="end_date" required />
 
-                <button type="submit" class="rent-button">Rent</button>
+                <div class="buttons-block">
+                    <button type="submit" class="btn btn-primary">Rent</button>
+                    <p>Or</p>
+                    <a href="<?= htmlspecialchars($rollerblade['purchase_link']) ?>" target="_blank"
+                        class="btn btn-secondary">Buy</a>
+                </div>
             </form>
-
-            <a href="<?= htmlspecialchars($rollerblade['purchase_link']) ?>" class="buy-button">Buy</a>
         </div>
 
         <div class="rollerblade-extras">
-            <div class="description">
-                <h3>Description</h3>
-                <p>Answer the frequently asked question in a simple sentence, a longish paragraph, or even in a list.
+            <div class="card description">
+                <div class="description-header">
+                    <h3>Description</h3>
+                    <img src='/views/shared/arrow.svg' alt="Arrow" id="description-arrow"
+                        onclick="toggleDescription()" />
+                </div>
+                <div id="description-content">
+                    <p><?= htmlspecialchars($rollerblade['description']) ?></p>
+                </div>
                 </p>
             </div>
         </div>

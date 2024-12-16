@@ -24,6 +24,14 @@ body {
 	font-size: 16px;
 }
 
+.hidden {
+	display: none;
+}
+
+.rotate {
+	transform: rotate(180deg);
+}
+
 /* shared Header */
 
 header {
@@ -144,4 +152,75 @@ nav {
 	padding: 1rem;
 	border-radius: 8px;
 	background: var(--background-default);
+}
+
+/* datetime inputs*/
+
+input[type='datetime-local'] {
+	width: 100%;
+	padding: 0.5rem;
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 8px; /* Rounded corners */
+	outline: none;
+	box-sizing: border-box;
+	color: #333; /* Text color */
+	font-family: inherit;
+	background-color: #fff;
+	appearance: none; /* Remove default browser styles */
+}
+
+input[type='datetime-local']::placeholder {
+	color: #bbb; /* Placeholder text color */
+	font-style: italic;
+}
+
+input[type='datetime-local']:focus {
+	border-color: #333; /* Darker border on focus */
+	box-shadow: 0 0 4px rgba(51, 51, 51, 0.3); /* Subtle shadow on focus */
+}
+
+/* select inputs */
+/* General Reset */
+select {
+	appearance: none; /* Remove default styles for modern browsers */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	/* Custom Styles */
+	background-color: #fff;
+	border: 1px solid #d1d1d1; /* Light gray border */
+	border-radius: 8px;
+	padding: 8px 12px;
+	font-size: 1rem;
+	color: var(--secondary-text);
+	cursor: pointer;
+
+	/* Dropdown Arrow */
+	background-image: url('/views/shared/arrow.svg');
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 0.85rem;
+
+	/* Prevent the text from hitting the arrow */
+	padding-right: 32px;
+}
+
+/* Hover Effect */
+select:hover {
+	border-color: #aaa; /* Darker border on hover */
+}
+
+/* Focus State */
+select:focus {
+	outline: none;
+	border-color: #666; /* Darker border when focused */
+	box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2); /* Subtle blue shadow */
+}
+
+/* Disabled State */
+select:disabled {
+	background-color: #f9f9f9;
+	color: #aaa;
+	cursor: not-allowed;
 }
