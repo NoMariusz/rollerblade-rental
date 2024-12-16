@@ -27,7 +27,7 @@ h1 {
 
 .color-badge {
 	display: inline-block;
-	color: black;
+	color: #888;
 	padding: 0.25rem 0.5rem;
 	margin: 0.5rem 0;
 	font-size: 0.9rem;
@@ -37,7 +37,7 @@ h1 {
 }
 
 .color-badge span {
-	opacity: 0.65;
+	mix-blend-mode: difference;
 }
 
 h2 {
