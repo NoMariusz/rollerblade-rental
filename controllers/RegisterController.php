@@ -72,7 +72,7 @@ class RegisterController extends BaseController
             ]
         );
 
-        return $result['count'] > 0;
+        return $result[0]['count'] > 0;
     }
 
     private function createUser($username, $password)
