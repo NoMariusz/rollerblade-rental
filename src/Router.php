@@ -6,6 +6,7 @@ $get_routes = [
     '/contact' => './views/contact/index.php',
     '/rollerblades' => './views/rollerblades/index.php',
     '/rollerblade' => './views/rollerblade/index.php',
+    '/rentals/all' => './views/rentals/all/index.php',
     '/rentals' => './views/rentals/index.php',
     '/login' => './views/login/index.html',
     '/logout' => './views/logout.php',

@@ -21,7 +21,7 @@
 
                 // Show "All Rentals" for moderators and above
                 if (AuthUtils::hasPriviledges(AuthLevels::Moderator)) {
-                    echo '<a href="/all-rentals">All Rentals</a>';
+                    echo '<a href="/rentals/all">All Rentals</a>';
                 }
 
                 // Show "Edit Users" for admins
