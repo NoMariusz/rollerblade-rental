@@ -7,7 +7,7 @@ INSERT INTO users (username, password, role_id) VALUES
 ('john_doe', 'password123', (SELECT id FROM roles WHERE name = 'user'));
 
 INSERT INTO user_profiles (id, user_id, first_name, last_name, email, phone_number) VALUES
-(1, (SELECT id FROM users WHERE username = 'john_doe'), 'John', 'Doe', 'john.doe@example.com', '123-456-789');
+(1, (SELECT id FROM users WHERE username = 'john_doe'), 'John', 'Doe', 'john.doe@example.com', '+48 123-456-789');
 
 INSERT INTO brands (name) VALUES 
 ('Powerslide'),

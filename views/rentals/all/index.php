@@ -24,9 +24,8 @@ $statuses = $dbManager->make_query($query);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Rentals - Moderator Panel</title>
-    <link rel="stylesheet" href="/views/rentals/styles.css" />
-    <link rel="stylesheet" href="/views/rentals/all/styles.css" />
     <link rel="stylesheet" href="/views/shared/index.css" />
+    <link rel="stylesheet" href="/views/shared/objectsTable.css" />
 </head>
 
 <body>

@@ -8,6 +8,7 @@ $get_routes = [
     '/rollerblade' => './views/rollerblade/index.php',
     '/rentals/all' => './views/rentals/all/index.php',
     '/rentals' => './views/rentals/index.php',
+    '/users' => './views/users/index.php',
     '/login' => './views/login/index.html',
     '/logout' => './views/logout.php',
     '/register' => './views/register/index.html',

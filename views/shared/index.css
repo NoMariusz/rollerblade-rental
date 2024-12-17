@@ -105,6 +105,10 @@ nav {
 	cursor: pointer;
 	border-radius: 0.5rem;
 }
+.btn[disabled] {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
 .btn a,
 [type='button'] a {
 	text-decoration: none;

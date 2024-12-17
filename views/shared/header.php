@@ -26,7 +26,7 @@
 
                 // Show "Edit Users" for admins
                 if (AuthUtils::hasPriviledges(AuthLevels::Admin)) {
-                    echo '<a href="/edit-users">Edit Users</a>';
+                    echo '<a href="/users">Edit Users</a>';
                 }
 
                 // Show username and logout button
