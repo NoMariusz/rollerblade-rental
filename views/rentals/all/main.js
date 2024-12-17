@@ -1,14 +1,14 @@
 // Function to change rental status
-async function changeRentalStatus(rentalId, newStatus) {
+async function changeRentalStatus(rentalId, statusId) {
 	try {
-		const response = await fetch('/change-rental-status', {
-			method: 'POST',
+		const response = await fetch('/rental/status', {
+			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				id: rentalId,
-				status: newStatus,
+				rentalId: rentalId,
+				statusId: statusId,
 			}),
 		});
 

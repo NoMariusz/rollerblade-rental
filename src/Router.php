@@ -21,6 +21,10 @@ $post_routes = [
     '/rent' => './controllers/RentalController.php',
 ];
 
+$patch_routes = [
+    '/rental/status' => './controllers/RentalStatusChangeController.php',
+];
+
 class Router
 {
     static function handle(string $path, string $method)
@@ -29,7 +33,9 @@ class Router
             case 'GET':
                 return self::handleGet($path);
             case 'POST':
-                return self::handlePost($path);
+                return self::handleJsonBasedMethods($path, $GLOBALS['post_routes']);
+            case 'PATCH':
+                return self::handleJsonBasedMethods($path, $GLOBALS['patch_routes']);
             default:
                 break;
         }
@@ -46,10 +52,10 @@ class Router
         return include_once './views/404/index.html';
     }
 
-    static function handlePost(string $path)
+    static function handleJsonBasedMethods(string $path, $controllersMap)
     {
-        if (array_key_exists($path, $GLOBALS['post_routes'])) {
-            return include_once $GLOBALS['post_routes'][$path];
+        if (array_key_exists($path, $controllersMap)) {
+            return include_once $controllersMap[$path];
         }
 
         http_response_code(404);
