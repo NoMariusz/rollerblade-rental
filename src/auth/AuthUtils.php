@@ -8,9 +8,10 @@ class AuthUtils
      * @param string $username The username of the logged-in user.
      * @param string $role The role of the user (e.g., 'user', 'moderator', 'admin').
      */
-    public static function authorizeUser($username, $role)
+    public static function authorizeUser($username, $role, $user_id)
     {
         $_SESSION['user'] = [
+            'id' => $user_id,
             'username' => $username,
             'role' => $role
         ];
@@ -37,23 +38,31 @@ class AuthUtils
     }
 
     /**
-     * Checks if the authorized user has moderator privileges.
-     *
-     * @return bool True if the user is a moderator or higher, otherwise false.
+     * Checks if the authorized user has given privileges.
      */
-    public static function isModerator()
+    public static function hasPriviledges(int $level)
     {
-        return isset($_SESSION['user']) && in_array($_SESSION['user']['role'], ['moderator', 'admin']);
-    }
+        if ($level === AuthLevels::None) {
+            return true;
+        }
 
-    /**
-     * Checks if the authorized user has admin privileges.
-     *
-     * @return bool True if the user is an admin, otherwise false.
-     */
-    public static function isAdmin()
-    {
-        return isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin';
+        if (!self::isAuthorized()) {
+            return false;
+        }
+
+        switch ($level) {
+            case AuthLevels::User:
+                return true;
+            case AuthLevels::Moderator:
+                return in_array($_SESSION['user']['role'], ['moderator', 'admin']);
+            case AuthLevels::Admin:
+                return $_SESSION['user']['role'] === 'admin';
+            default:
+                # code...
+                break;
+        }
+
+        return false;
     }
 
     /**
@@ -74,5 +83,10 @@ class AuthUtils
     public static function getUserRole()
     {
         return $_SESSION['user']['role'] ?? null;
+    }
+
+    public static function getUserId()
+    {
+        return $_SESSION['user']['id'] ?? null;
     }
 }

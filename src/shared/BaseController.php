@@ -4,8 +4,11 @@ abstract class BaseController
 {
     protected $dbManager;
 
-    public function __construct()
+    public function __construct(int $priviledgesLevel = AuthLevels::None)
     {
+        if (!AuthUtils::hasPriviledges($priviledgesLevel)) {
+            $this->sendResponse(['error' => 'Unauthorized'], 401);
+        }
         $this->dbManager = new DbManager(); // Initialize the database manager
     }
 
@@ -27,5 +30,10 @@ abstract class BaseController
     protected function sendResponse($data, $statusCode = 200)
     {
         CommunicationUtils::sendResponse($data, $statusCode);
+    }
+
+    protected function getJSONInput()
+    {
+        return json_decode(file_get_contents('php://input'), true);
     }
 }

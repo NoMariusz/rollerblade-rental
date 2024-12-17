@@ -27,7 +27,7 @@ class LoginController extends BaseController
 
             if ($user && password_verify($password, $user['password'])) {
                 // Password matches, login successful
-                AuthUtils::authorizeUser($user['username'], $user['role']);
+                AuthUtils::authorizeUser($user['username'], $user['role'], $user['id']);
                 $this->sendResponse(['message' => 'Login successful']);
             } else {
                 // Invalid credentials

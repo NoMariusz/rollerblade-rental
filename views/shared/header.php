@@ -13,19 +13,19 @@
             <a href="/contact">Contact</a>
 
             <?php
-            require_once './src/shared/AuthUtils.php';
+            require_once './src/includes.php';
 
             if (AuthUtils::isAuthorized()) {
                 // Show "My Rentals" for all authorized users
                 echo '<a href="/my-rentals">My Rentals</a>';
 
                 // Show "All Rentals" for moderators and above
-                if (AuthUtils::isModerator()) {
+                if (AuthUtils::hasPriviledges(AuthLevels::Moderator)) {
                     echo '<a href="/all-rentals">All Rentals</a>';
                 }
 
                 // Show "Edit Users" for admins
-                if (AuthUtils::isAdmin()) {
+                if (AuthUtils::hasPriviledges(AuthLevels::Admin)) {
                     echo '<a href="/edit-users">Edit Users</a>';
                 }
 

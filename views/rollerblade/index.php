@@ -75,7 +75,7 @@
             <h2 class="price"><?= htmlspecialchars($rollerblade['hourly_rate']) ?> PLN</h2>
             <p class="price-label">rental price</p>
 
-            <form action="/rent" method="post" class="rent-form">
+            <form action="/rent" method="post" id="rent-form">
                 <input type="hidden" name="rollerblade_id" value="<?= htmlspecialchars($rollerbladeId) ?>" />
 
                 <label for="sizeSelect">Size</label>
@@ -128,6 +128,7 @@
                     <a href="<?= htmlspecialchars($rollerblade['purchase_link']) ?>" target="_blank"
                         class="btn btn-secondary">Buy</a>
                 </div>
+                <p id="error-message" class="error"></p>
             </form>
         </div>
 

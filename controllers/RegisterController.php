@@ -6,7 +6,7 @@ class RegisterController extends BaseController
 {
     public function handleRequest()
     {
-        $input = json_decode(file_get_contents('php://input'), true);
+        $input = $this->getJSONInput();
 
         // Validate the request payload
         if (

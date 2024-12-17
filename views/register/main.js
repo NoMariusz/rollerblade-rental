@@ -38,7 +38,7 @@ form.addEventListener('submit', async (event) => {
 
 		if (response.ok) {
 			// Redirect or handle success
-			window.location.href = '/dashboard';
+			window.location.href = '/rollerblades';
 		} else {
 			// Display error message
 			errorMessage.textContent = data.error || 'An error occurred';
