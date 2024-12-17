@@ -17,7 +17,7 @@
 
             if (AuthUtils::isAuthorized()) {
                 // Show "My Rentals" for all authorized users
-                echo '<a href="/my-rentals">My Rentals</a>';
+                echo '<a href="/rentals">My Rentals</a>';
 
                 // Show "All Rentals" for moderators and above
                 if (AuthUtils::hasPriviledges(AuthLevels::Moderator)) {

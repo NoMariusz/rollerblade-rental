@@ -12,3 +12,4 @@ include_once $root . '/src/auth/AuthUtils.php';
 include_once $root . '/src/shared/DbManager.php';
 
 include_once $root . '/src/shared/BaseController.php';
+include_once $root . '/src/shared/ViewsUtils.php';

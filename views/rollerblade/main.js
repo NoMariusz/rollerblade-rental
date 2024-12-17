@@ -30,7 +30,7 @@ form.addEventListener('submit', async (event) => {
 
 		if (response.ok) {
 			// Redirect or handle success
-			window.location.href = '/my-rentals';
+			window.location.href = '/rentals';
 			return;
 		}
 

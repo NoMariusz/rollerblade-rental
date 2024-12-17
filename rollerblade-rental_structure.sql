@@ -158,6 +158,7 @@ CREATE OR REPLACE VIEW rental_details AS
 SELECT
     r.id AS rental_id,
     u.username AS user_name,
+    u.id AS user_id,
     rs.name AS rental_status,
     r.start_date,
     r.end_date,
