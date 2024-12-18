@@ -2,9 +2,9 @@
 
 Rollerblade reservation system project for studies 
 
-<img src="https://github.com/user-attachments/assets/caf76ea7-f800-4836-bb66-fa94c38f7768" alt="Rollerblades page" height="550" />
-<img src="https://github.com/user-attachments/assets/0103e77a-0f3c-49ef-a749-79183b018b7e" alt="Rollerblade mobile vertical page" height="610" /> 
-<img src="https://github.com/user-attachments/assets/baa7b223-1d32-4200-83ce-29eeb389fafa" alt="Users mobile horizontal page" height="610" /> 
+<img src="https://github.com/user-attachments/assets/caf76ea7-f800-4836-bb66-fa94c38f7768" alt="Rollerblades page" width="825" />
+<img src="https://github.com/user-attachments/assets/0103e77a-0f3c-49ef-a749-79183b018b7e" alt="Rollerblade mobile vertical page" height="500" /> 
+<img src="https://github.com/user-attachments/assets/baa7b223-1d32-4200-83ce-29eeb389fafa" alt="Users mobile horizontal page" height="500" /> 
 
 
 ## Instalation
