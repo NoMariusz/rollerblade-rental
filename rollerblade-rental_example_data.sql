@@ -3,11 +3,12 @@ INSERT INTO roles (name) VALUES
 ('moderator'),
 ('user');
 
+-- password for admin: password
 INSERT INTO users (username, password, role_id) VALUES
-('john_doe', 'password123', (SELECT id FROM roles WHERE name = 'user'));
+('admin', '$2y$10$6My6Cbyr.R3d2M0Q3pXJ3uQhJfOoh3ENCc5lfGrDxVa9Z/ziTprJK', (SELECT id FROM roles WHERE name = 'admin'));
 
 INSERT INTO user_profiles (id, user_id, first_name, last_name, email, phone_number) VALUES
-(1, (SELECT id FROM users WHERE username = 'john_doe'), 'John', 'Doe', 'john.doe@example.com', '+48 123-456-789');
+(1, (SELECT id FROM users WHERE username = 'admin'), 'John', 'Doe', 'john.doe@example.com', '+48 123-456-789');
 
 INSERT INTO brands (name) VALUES 
 ('Powerslide'),
@@ -41,7 +42,7 @@ INSERT INTO photos (model_version_id, url) VALUES
 (2, 'https://cdn.bladeville.pl/media/catalog/product/cache/1/image/480x480/9df78eab33525d08d6e5fb8d27136e95/9/0/908426-38967_ps_imperial_lollipop_80_2023_view00.jpg'),
 (3, 'https://cdn.bladeville.pl/media/catalog/product/cache/1/image/480x480/9df78eab33525d08d6e5fb8d27136e95/0/7/073726001a1_lightning_photo-outside_side_view.jpg'),
 (4, 'https://cdn.bladeville.pl/media/catalog/product/cache/1/image/480x480/9df78eab33525d08d6e5fb8d27136e95/0/7/073720002v4_lightning_110_photo-outside_side_view.jpg'),
-(4, 'https://cdn.bladeville.pl/media/catalog/product/cache/1/image/480x480/9df78eab33525d08d6e5fb8d27136e95/0/7/073720002v4_lightning_110_photo-primary_angled_view-_1_.jpg');
+(4, 'https://cdn.bladeville.pl/media/catalog/product/cache/1/image/480x480/9df78eab33525d08d6e5fb8d27136e95/0/7/073720002v4_lightning_110_photo-primary_angled_view-_1_.jpg'),
 (5, 'https://cdn.bladeville.pl/media/catalog/product/cache/1/image/480x480/9df78eab33525d08d6e5fb8d27136e95/2/3/23540_5a4b8eafbda59IMG_9288_1.jpg');
 
 
