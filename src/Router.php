@@ -25,6 +25,7 @@ $non_get_routes = [
     'PATCH' => [
         '/rental/status' => './controllers/RentalStatusChangeController.php',
         '/user/role' => './controllers/UserRoleChangeController.php',
+        '/user/password' => './controllers/ChangeUserPasswordController.php',
     ],
     'DELETE' => [
         '/rental/status' => './controllers/RentalStatusChangeController.php',

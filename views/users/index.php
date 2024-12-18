@@ -71,10 +71,14 @@ $roles = $dbManager->make_query("SELECT id, name FROM roles");
                                 </div>
                             </td>
                             <td>
-                                <!-- Delete User Button -->
-                                <button class="btn btn-primary" onclick="deleteUser(<?php echo $user['id']; ?>)">
-                                    Delete
-                                </button>
+                                <div class="buttons">
+                                    <button class="btn btn-primary" onclick="changePassword(<?php echo $user['id']; ?>)">
+                                        Change password
+                                    </button>
+                                    <button class="btn btn-primary" onclick="deleteUser(<?php echo $user['id']; ?>)">
+                                        Delete
+                                    </button>
+                                </div>
                             </td>
                         </tr>
                     <?php endforeach; ?>
