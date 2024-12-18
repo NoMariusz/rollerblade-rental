@@ -1,7 +1,7 @@
 <header>
     <div class="logo">
         <a href="/">
-            <img src="/views/shared/rr_logo.png" alt="Rollerblade-Rental" />
+            <img src="/assets/rr_logo.png" alt="Rollerblade-Rental" />
         </a>
     </div>
     <div class="hamburger-wrapper">
