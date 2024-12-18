@@ -16,31 +16,34 @@ $get_routes = [
     '/ratings' => './views/getHomepageRatings.php',
 ];
 
-$post_routes = [
-    '/login' => './controllers/LoginController.php',
-    '/register' => './controllers/RegisterController.php',
-    '/rent' => './controllers/RentalController.php',
-];
-
-$patch_routes = [
-    '/rental/status' => './controllers/RentalStatusChangeController.php',
-    '/user/role' => './controllers/UserRoleChangeController.php',
+$non_get_routes = [
+    'POST' => [
+        '/login' => './controllers/LoginController.php',
+        '/register' => './controllers/RegisterController.php',
+        '/rent' => './controllers/RentalController.php',
+    ],
+    'PATCH' => [
+        '/rental/status' => './controllers/RentalStatusChangeController.php',
+        '/user/role' => './controllers/UserRoleChangeController.php',
+    ],
+    'DELETE' => [
+        '/rental/status' => './controllers/RentalStatusChangeController.php',
+        '/user' => './controllers/DeleteUserController.php',
+    ],
 ];
 
 class Router
 {
     static function handle(string $path, string $method)
     {
-        switch ($method) {
-            case 'GET':
-                return self::handleGet($path);
-            case 'POST':
-                return self::handleJsonBasedMethods($path, $GLOBALS['post_routes']);
-            case 'PATCH':
-                return self::handleJsonBasedMethods($path, $GLOBALS['patch_routes']);
-            default:
-                break;
+        if ($method === 'GET') {
+            return self::handleGet($path);
         }
+
+        if (array_key_exists($method, $GLOBALS['non_get_routes'])) {
+            return self::handleJsonBasedMethods($path, $GLOBALS['non_get_routes'][$method]);
+        }
+
         http_response_code(405);
         return json_encode(['error' => '405', 'message' => 'Method Not Allowed']);
     }
