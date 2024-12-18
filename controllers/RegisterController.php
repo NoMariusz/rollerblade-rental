@@ -36,20 +36,19 @@ class RegisterController extends BaseController
             // Hash the password for security
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            // Start a transaction to ensure atomicity
             $this->dbManager->begin_transaction();
 
-            // Insert into users table
             $userId = $this->createUser($username, $hashedPassword);
 
-            // Insert into user_profiles table
             $success = $this->createUserProfile($userId, $firstName, $lastName, $email);
             if (!$success) {
                 $this->sendResponse(['message' => 'Cannot create userProfile', 'data' => $success], 500);
                 return;
             }
 
-            // Commit the transaction
+            // auto login the user
+            AuthUtils::authorizeUser($username, USER_ROLE_ID, $userId);
+
             $this->dbManager->commit_transaction();
 
             $this->sendResponse(['message' => 'Registration successful']);
