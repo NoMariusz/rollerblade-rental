@@ -16,7 +16,6 @@ function changeUserRole(userId, newRoleId, newRole) {
 		.then((response) => response.json())
 		.then((data) => {
 			if (data.message) {
-				alert('Role updated successfully!');
 				window.location.reload();
 			} else if (data.error) {
 				alert('Error: ' + data.error);

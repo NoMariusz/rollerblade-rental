@@ -24,6 +24,7 @@ $post_routes = [
 
 $patch_routes = [
     '/rental/status' => './controllers/RentalStatusChangeController.php',
+    '/user/role' => './controllers/UserRoleChangeController.php',
 ];
 
 class Router
